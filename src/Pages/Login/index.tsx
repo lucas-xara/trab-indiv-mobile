@@ -16,10 +16,12 @@ import SMTlogo from "../../Assets/smt-logo.png";
 import ButtonI from "../../Assets/button.png";
 import ButtonIcon from "../../Assets/login.png";
 import { TextInputComponent } from "../../Components/TextInput";
+import { useNavigation } from '@react-navigation/native'
 
 export function Login() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const navigation = useNavigation();
 
   const handleUsername = (value: string) => {
     setUsername(value);
@@ -32,7 +34,8 @@ export function Login() {
   };
 
   const handleLogin = () => {
-    Alert.alert("Botão clicado!");
+    //Alert.alert("Botão clicado!");
+    navigation.navigate("StackTabsPages")
   };
 
   return (
