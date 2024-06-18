@@ -21,6 +21,7 @@ export function TextInputComponent({
   return (
     <TextInput
       onChangeText={recebendoFuncao}
+      autoCapitalize="none"
       value={recebendoValue}
       style={[styled.styleInput, { 
         backgroundColor: recebendoBackgroundColor ? recebendoBackgroundColor : '#fff'

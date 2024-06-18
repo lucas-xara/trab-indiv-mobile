@@ -21,23 +21,21 @@ export const styled = StyleSheet.create({
   },
 
   button: {
+    marginTop: 20,
     backgroundColor: '#b0b0b0',
-    width: '60%',
+    width: 80,
     alignItems: 'center',
+    alignContent: 'center',
     justifyContent: 'center',
     borderRadius: 10,
     marginBottom: 100,
-    height: 50,
+    height: 80,
   },
 
   textButton: {
     padding: 2,
-    marginBottom: 4,
-    fontSize: 25,
+    marginBottom: -60,
+    fontSize: 20,
     color: 'white',
-    textShadowColor: 'black',
-    textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 8,
   },
-
 });
