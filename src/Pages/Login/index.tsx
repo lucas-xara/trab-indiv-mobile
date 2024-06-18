@@ -1,74 +1,87 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
-  Text, TextInput, TouchableOpacity, View,
-  Image, Button, Alert, TouchableWithoutFeedback, Keyboard
-} from 'react-native'
-import { styled } from './style';
-import Banner from '../../Assets/banner.jpg';
-import { TextInputComponent } from '../../Components/TextInput';
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  Alert,
+  TouchableWithoutFeedback,
+  Keyboard,
+  ImageBackground,
+} from "react-native";
+import { styled } from "./style";
+import Background from "../../Assets/background.jpg";
+import Logo from "../../Assets/logo.png";
+import SMTlogo from "../../Assets/smt-logo.png";
+import ButtonI from "../../Assets/button.png"
+import { TextInputComponent } from "../../Components/TextInput";
 
 export function Login() {
-
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleEmail = (value: string) => {
-    setEmail(value)
-    console.log('Valor do email: ' + value)
-  }
+    setEmail(value);
+    console.log("Valor do email: " + value);
+  };
 
   const handlePassword = (value: string) => {
-    setPassword(value)
-    console.log('Valor da senha: ', value);
-  }
+    setPassword(value);
+    console.log("Valor da senha: ", value);
+  };
 
   const handleLogin = () => {
-    Alert.alert('Botão clicado!')
-  }
+    Alert.alert("Botão clicado!");
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-
-      <View style={styled.container}>
-        <Text style={styled.title}>Bem vindo ao nosso segundo App!</Text>
-
-        <TextInputComponent
-          recebendoFuncao={handleEmail}
-          recebendoValue={email}
-          recebendoPlaceHolder="Digite seu email..."
-        />
-
-        <TextInputComponent
-          recebendoFuncao={handlePassword}
-          recebendoValue={password}
-          recebendoPlaceHolder="Digite sua senha..."
-          recebendoTipoDoInput={true}
-          recebendoBackgroundColor="red"
-        />
-
-         <TextInputComponent
-          recebendoFuncao={handleEmail}
-          recebendoValue={email}
-        />
-
-        <TouchableOpacity style={styled.button} onPress={handleLogin}>
+      <ImageBackground source={Background} style={styled.background}>
+        <View style={styled.container}>
           <Image
             style={{
-              width: '100%',
-              height: 50,
-              position: 'absolute',
-              borderRadius: 10,
+              width: 180,
+              height: 180,
+              marginTop: 100,
+              marginBottom: -10,
             }}
-            source={Banner}
-            alt="fundo botão"
+            source={Logo}
+            alt="logo"
           />
 
-          <Text style={styled.textButton}>
-            Entrar
-          </Text>
-        </TouchableOpacity>
+          <Text style={styled.title}>Fusion App</Text>
 
-      </View>
+          <TextInputComponent
+            recebendoFuncao={handleEmail}
+            recebendoValue={email}
+            recebendoPlaceHolder="username"
+          />
+
+          <TextInputComponent
+            recebendoFuncao={handlePassword}
+            recebendoValue={password}
+            recebendoPlaceHolder="password"
+            recebendoTipoDoInput={true}
+          />
+
+          <TouchableOpacity style={styled.button} onPress={handleLogin}>
+          <ImageBackground
+              source={ButtonI}
+            >
+              <Text style={styled.textButton}>Login</Text>
+            </ImageBackground>
+          </TouchableOpacity>
+          <Image
+            style={{
+              width: '50%',
+              height: 80,
+              resizeMode: 'contain',
+            }}
+            source={SMTlogo}
+            alt="smt-logo"
+          />
+        </View>
+      </ImageBackground>
     </TouchableWithoutFeedback>
-  )
+  );
 }
