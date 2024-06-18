@@ -13,10 +13,10 @@ import { styled } from "./style";
 import Background from "../../Assets/background.jpg";
 import Logo from "../../Assets/logo.png";
 import SMTlogo from "../../Assets/smt-logo.png";
-import ButtonI from "../../Assets/button.png";
 import ButtonIcon from "../../Assets/login.png";
 import { TextInputComponent } from "../../Components/TextInput";
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+import { ButtonComponent } from "../../Components/Button"; // Certifique-se de que o caminho está correto
 
 export function Login() {
   const [username, setUsername] = useState<string>("");
@@ -34,8 +34,7 @@ export function Login() {
   };
 
   const handleLogin = () => {
-    //Alert.alert("Botão clicado!");
-    navigation.navigate("StackTabsPages")
+    //navigation.navigate("StackTabsPages");
   };
 
   return (
@@ -68,34 +67,7 @@ export function Login() {
             recebendoTipoDoInput={true}
           />
 
-          <TouchableOpacity style={styled.button} onPress={handleLogin}>
-            <Image
-              style={{
-                width: "100%",
-                height: 80,
-                position: "absolute",
-                borderRadius: 10,
-                opacity: 0.8,
-              }}
-              source={ButtonI}
-              alt="fundo botão"
-            />
-
-            <Image
-              style={{
-                width: "50%",
-                alignItems: "center",
-                alignContent: "center",
-                position: "absolute",
-                resizeMode: "contain",
-              }}
-              source={ButtonIcon}
-              alt="icon"
-            />
-            
-            <Text style={styled.textButton}>Login</Text>
-            
-          </TouchableOpacity>
+          <ButtonComponent text="Login" icon={ButtonIcon} onPress={handleLogin} />
 
           <Image
             style={{

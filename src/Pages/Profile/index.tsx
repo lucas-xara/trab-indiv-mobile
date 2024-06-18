@@ -6,7 +6,6 @@ import { styled } from './style';
 export function Profile() {
 
   const handleLogout = () =>{
-    Alert.alert("Sair")
   }
 
   return (

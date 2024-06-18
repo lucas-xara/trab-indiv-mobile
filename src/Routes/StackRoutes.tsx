@@ -14,7 +14,7 @@ export function StackRoutes() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen name="StackLogin" component={Login}/>
-                <Stack.Screen name="StackTabsPages" component={BottomTabsRoutes}/>
+                {/* <Stack.Screen name="StackTabsPages" component={BottomTabsRoutes}/> */}
             </Stack.Navigator>
         </NavigationContainer>
     )
