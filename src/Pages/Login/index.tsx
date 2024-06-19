@@ -32,7 +32,7 @@ export function Login() {
   };
 
   const handleLogin = () => {
-    if(username) {
+    if(username && password) {
       navigation.navigate("StackTabsPages", { name: "Login" })
     } else {
       Alert.alert("Credenciais invalidas!")

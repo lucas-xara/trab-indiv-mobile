@@ -1,13 +1,21 @@
 import React from 'react';
-import { View, Text, Image, ImageBackground } from 'react-native';
+import { View, Text, Image, ImageBackground, Alert } from 'react-native';
 import { styled } from './style';
 import { useNavigation } from '@react-navigation/native';
 import Background from "../../Assets/background.jpg";
 import Mido from "../../Assets/shadows.gif";
+import Catalog from "../../Assets/catalog.png"
+import Fusion from "../../Assets/fusion.png"
+import { ButtonComponent } from "../../Components/Button";
+
 
 export function Home() {
 
   const navigation = useNavigation();
+
+  const soonAlert = () => {
+      Alert.alert("Soon")
+    }
 
   return (
     <View style={styled.container}>
@@ -16,7 +24,7 @@ export function Home() {
             style={{
               alignSelf: 'center',
               height: 200,
-              marginTop: -300,
+              marginTop: 0,
               marginBottom: 0,
               resizeMode: "contain",
             }}
@@ -31,6 +39,22 @@ export function Home() {
       <Text style={styled.demons}>
       where demons gather...</Text> 
       </View>  
+
+      <View style={styled.buttonsBox}>
+      <ButtonComponent
+            recebendoTitle="Catalog"
+            recebendoIcon={Catalog}
+            recebendoFuncao={soonAlert}
+          />
+        <ButtonComponent
+            recebendoTitle="Fusion"
+            recebendoIcon={Fusion}
+            recebendoFuncao={soonAlert}
+          />
+      </View>
+
+
+
       </ImageBackground>
     </View>
   )
