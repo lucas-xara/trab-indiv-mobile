@@ -32,7 +32,7 @@ export function Profile() {
 
         <View style={styled.button}>
           <ButtonComponent
-            recebendoTitle="Sair"
+            recebendoTitle="Logout"
             recebendoIcon={Logout}
             recebendoFuncao={handleLogout}
           />
