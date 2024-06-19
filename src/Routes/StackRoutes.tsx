@@ -23,9 +23,3 @@ export function StackRoutes() {
         </NavigationContainer>
     )
 }
-
-declare global {
-    namespace ReactNavigation {
-        interface RootParamList extends ParametrosRota {} // Certificação de integração global dos tipos
-    }
-}

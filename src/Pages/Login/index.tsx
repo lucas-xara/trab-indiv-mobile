@@ -3,6 +3,7 @@ import {
   Text,
   View,
   Image,
+  Alert,
   TouchableWithoutFeedback,
   Keyboard,
   ImageBackground,
@@ -24,18 +25,19 @@ export function Login() {
 
   const handleUsername = (value: string) => {
     setUsername(value);
-    console.log("Valor do username: " + value);
   };
 
   const handlePassword = (value: string) => {
     setPassword(value);
-    console.log("Valor da senha: ", value);
   };
 
   const handleLogin = () => {
-    console.log("Botão de login pressionado"); // Adicione mensagem de depuração
-    navigation.navigate("StackLogin", { name: "Login"});
-  };
+    if(username) {
+      navigation.navigate("StackTabsPages", { name: "Login" })
+    } else {
+      Alert.alert("Credenciais invalidas!")
+    }
+  }
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
