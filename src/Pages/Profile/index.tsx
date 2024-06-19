@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Alert, StyleSheet } from 'react-native';
-import ButtonComponents from './ButtonComponents';
+import { ButtonComponent } from "../../Components/Button";
 import { styled } from './style';
+import Logout from '../../Assets/logout.png'
 
 export function Profile() {
 
@@ -14,7 +15,11 @@ export function Profile() {
         Estamos na pagina Profile!
       </Text>
 
-      <ButtonComponents title='Sair' recebendoFuncao={handleLogout}/>
+      <ButtonComponent 
+      recebendoTitle="Sair"
+      recebendoIcon={Logout}
+      recebendoFuncao={handleLogout}/>
+      
 
     </View>
   )

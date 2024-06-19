@@ -16,7 +16,7 @@ import SMTlogo from "../../Assets/smt-logo.png";
 import ButtonIcon from "../../Assets/login.png";
 import { TextInputComponent } from "../../Components/TextInput";
 import { useNavigation } from '@react-navigation/native';
-import { ButtonComponent } from "../../Components/Button"; // Certifique-se de que o caminho está correto
+import { ButtonComponent } from "../../Components/Button";
 
 export function Login() {
   const [username, setUsername] = useState<string>("");
@@ -34,7 +34,7 @@ export function Login() {
   };
 
   const handleLogin = () => {
-    //navigation.navigate("StackTabsPages");
+    navigation.navigate("StackLogin", { name: "Login"});
   };
 
   return (
@@ -67,7 +67,10 @@ export function Login() {
             recebendoTipoDoInput={true}
           />
 
-          <ButtonComponent text="Login" icon={ButtonIcon} onPress={handleLogin} />
+          <ButtonComponent 
+          recebendoTitle="Login" 
+          recebendoIcon={ButtonIcon} 
+          recebendoFuncao={handleLogin} />
 
           <Image
             style={{
