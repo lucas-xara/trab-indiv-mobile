@@ -9,33 +9,24 @@ export const styled = StyleSheet.create({
   },
 
   background: {
+    height: '100%',
+    width: '100%',
     flex: 1,
     justifyContent: 'center',
   },
 
   title: {
-    fontSize: 35,
+    color: 'white',    
     textAlign: 'center',
-    color: 'white',
-    fontWeight: '900'
+    fontSize: 30,
+    paddingTop:20,
+    paddingLeft: 90,
+    paddingRight: 90,
   },
 
   button: {
-    marginTop: 20,
-    backgroundColor: '#b0b0b0',
-    width: 80,
-    alignItems: 'center',
     alignContent: 'center',
-    justifyContent: 'center',
-    borderRadius: 10,
-    marginBottom: 100,
-    height: 80,
-  },
-
-  textButton: {
-    padding: 2,
-    marginBottom: -60,
-    fontSize: 20,
-    color: 'white',
+    alignSelf: 'center',
+    marginTop: 80,
   },
 });
