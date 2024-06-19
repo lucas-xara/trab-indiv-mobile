@@ -1,5 +1,4 @@
 import React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Login } from "../Pages/Login";
@@ -13,16 +12,20 @@ export type ParametrosRota = {
 const Stack = createNativeStackNavigator<ParametrosRota>();
 
 export function StackRoutes() {
+    console.log("StackRoutes renderizado"); // Adicionando mensagem de depuração
     
     return (
-        
         <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown: false}}>
-
                 <Stack.Screen name="StackLogin" component={Login}/>
                 <Stack.Screen name="StackTabsPages" component={BottomTabsRoutes}/>
-                
             </Stack.Navigator>
         </NavigationContainer>
     )
+}
+
+declare global {
+    namespace ReactNavigation {
+        interface RootParamList extends ParametrosRota {} // Certificação de integração global dos tipos
+    }
 }

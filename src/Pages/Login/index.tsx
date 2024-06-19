@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import {
   Text,
-  TouchableOpacity,
   View,
   Image,
-  Alert,
   TouchableWithoutFeedback,
   Keyboard,
   ImageBackground,
@@ -21,6 +19,7 @@ import { ButtonComponent } from "../../Components/Button";
 export function Login() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  
   const navigation = useNavigation();
 
   const handleUsername = (value: string) => {
@@ -34,6 +33,7 @@ export function Login() {
   };
 
   const handleLogin = () => {
+    console.log("Botão de login pressionado"); // Adicione mensagem de depuração
     navigation.navigate("StackLogin", { name: "Login"});
   };
 
