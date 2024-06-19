@@ -24,7 +24,7 @@ export function Home() {
             style={{
               alignSelf: 'center',
               height: 200,
-              marginTop: 0,
+              marginTop: 50,
               marginBottom: 0,
               resizeMode: "contain",
             }}

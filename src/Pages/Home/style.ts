@@ -44,8 +44,10 @@ export const styled = StyleSheet.create({
   },
 
   buttonsBox: {
+    marginTop: 40,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '60%',
   },
 });
